@@ -1,0 +1,23 @@
+<a href="http://localhost:8000/#/customers">Customers</a>
+<a href="http://localhost:8000/#/products">Products</a>
+<div style="font-size: large; margin-top: 5%; margin-left: 10%">
+    <p>
+        <span ng-bind="'manage_invoice'"></span>
+    </p>
+</div>
+<table class="table table-striped" align="center" style="width: 80%;">
+    <thead>
+    <tr>
+        <th> <span>customer_id</span> </th>
+        <th> <span>discount</span> </th>
+        <th> <span>total</span> </th>
+    </thead>
+    <tbody ng-repeat="item in collection">
+    <tr ng-click= "go(item.id)">
+        <td>{{item.customer_id}}</td>
+        <td>{{item.discount}}</td>
+        <td>{{item.total}}</td>
+    </tr>
+
+    </tbody>
+</table>

@@ -1,12 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+ <html lang="en" ng-app="myApp" class="no-js">
+ <!--<html lang="en" class="no-js">-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My AngularJS App Manage users</title>
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+   <link rel="stylesheet" href="app.css">
+    <script type="javascript" src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    <!--<script type="text/javascript" src="test.js"></script>-->
+
 </head>
 <body>
-<h1>Hello World!</h1>
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div ng-view>
+</div>
+
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+<script  src="./bower_components/angular/angular.js"></script>
+<script  src="./bower_components/angular-route/angular-route.js"></script>
+<script  src="./angularApp.js"></script>
+<script src="./app.routing.js"></script>
+
+<script  src="customers/customers.js"></script>
+<script src="customers/customers.ctrl.js"></script>
+<script  src="customers/customers.routing.js"></script>
+<script  src="customers/customers.svc.js"></script>
+<script  src="customers/customers-store.svc.js"></script>
+
+<script  src="invoices/invoices.js"></script>
+<script src="invoices/invoices.ctrl.js"></script>
+<script  src="invoices/invoices.routing.js"></script>
+<script  src="invoices/invoices.svc.js"></script>
+<script  src="invoices/invoices-store.svc.js"></script>
+
+<script  src="products/products.js"></script>
+<script src="products/products.ctrl.js"></script>
+<script  src="products/products.routing.js"></script>
+<script  src="products/products.svc.js"></script>
+<script  src="products/products-store.svc.js"></script>
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script  src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script  src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+
+
 </body>
 </html>

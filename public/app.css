@@ -1,0 +1,43 @@
+/* app css stylesheet */
+.lang-btn{
+    width: 70px;
+    height: 55px;
+}
+
+.lang-buttons{
+    margin-top: 55px;
+    text-align: center
+}
+
+.menu {
+    list-style: none;
+    border-bottom: 0.1em solid black;
+    margin-bottom: 2em;
+    padding: 0 0 0.5em;
+}
+
+.menu:before {
+    content: "[";
+}
+
+.menu:after {
+    content: "]";
+}
+
+.menu > li {
+    display: inline;
+}
+
+.menu > li:before {
+    content: "|";
+    padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+    content: "";
+    padding: 0;
+}
+
+a {
+    margin-left: 100px;
+}

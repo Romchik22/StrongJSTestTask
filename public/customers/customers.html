@@ -1,0 +1,80 @@
+<a href="http://localhost:8000/#/invoices">Invoices</a>
+<a href="http://localhost:8000/#/products">Products</a>
+<div style="font-size: large; margin-top: 5%; margin-left: 10%">
+    <p>
+        <span ng-bind="'manage_customers'"></span>
+    </p>
+</div>
+<table class="table table-striped" align="center" style="width: 80%;">
+    <thead>
+    <tr>
+        <th> <span>name </span> </th>
+        <th> <span>address</span> </th>
+        <th> <span>phone</span> </th>
+        <th> <span>actions</span> </th>
+    </tr>
+    </thead>
+    <tbody ng-repeat="item in collection">
+
+    <tr>
+        <td>{{item.name}}</td>
+        <td>{{item.address}}</td>
+        <td>{{item.phone}}</td>
+        <td>
+            <button data-toggle="modal" data-target="#createCustomer" type="button" class="btn btn-info" ng-click="tempCustomer.id = item.id; tempCustomer.name = item.name; tempCustomer.address = item.address; tempCustomer.phone = item.phone; tempCustomer.edit = true;">
+                <span class="glyphicon glyphicon-cog"></span>
+            </button>
+            <button type="button" class="btn btn-danger" ng-click="removeCustomer($index, item.id)">
+                <span class="glyphicon glyphicon-remove-sign"></span>
+            </button>
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+
+<button data-toggle="modal" data-target="#createCustomer" style="float: right; margin-right: 5%; width: 50px; height: 50px; padding: 10px 16px; font-size: 18px; line-height: 1.33; border-radius: 25px;"
+        type="button" class="btn btn-success btn-circle btn-xl" ng-click="tempCustomer.name = ''; tempCustomer.address = ''; tempCustomer.phone = ''; tempCustomer.edit = false" ><i class="glyphicon glyphicon-plus"></i></button>
+
+<!-- Modal -->
+<div id="createCustomer" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <p><span ng-bind="'create'"></span> </p>
+                <label for="name">
+                    <span ng-bind="'name'"></span>
+                </label>
+                <div>
+                    <input ng-model="tempCustomer.name" type="text" class="form-control" id="name" placeholder="{{'enter_name'}}" name="name" required>
+                </div>
+                <br>
+                <label for="address">
+                    <span ng-bind="'address'"></span>
+                </label>
+                <div>
+                    <input ng-model="tempCustomer.address" type="text" class="form-control" id="address" placeholder="{{'enter_address'}}" name="address" required>
+                </div>
+                <label for="address">
+                    <span ng-bind="'phone'"></span>
+                </label>
+                <div>
+                    <input ng-model="tempCustomer.phone" type="text" class="form-control" id="phone" placeholder="{{'enter_phone'}}" name="phone" required>
+                </div>
+                <br>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span ng-bind="'close'"></span></button>
+                <button ng-if="!tempCustomer.edit" type="button" class="btn btn-default" data-dismiss="modal" ng-click="addCustomer()"><span ng-bind="'add'"></span></button>
+                <button ng-if="tempCustomer.edit" type="button" class="btn btn-default" data-dismiss="modal" ng-click="editCustomer()"><span ng-bind="'edit'"></span></button>
+            </div>
+        </div>
+
+    </div>
+</div>
